@@ -6,17 +6,29 @@ class Employee:
     def calculate_salary(self):
         return self.base_salary
 
+
 class Developer(Employee):
     """
-    ЗАДАЧА: Реализовать расчет зарплаты с бонусом.
-    1. Конструктор должен принимать name, base_salary и bonus.
-    2. Использовать super() для инициализации родительских атрибутов.
-    3. Переопределить calculate_salary: возвращать base_salary + bonus.
+    Класс разработчика с бонусом к зарплате.
     """
+
     def __init__(self, name, base_salary, bonus):
-        # ТВОЙ КОД ЗДЕСЬ
-        pass
+        """
+        Конструктор класса Developer.
+
+        Args:
+            name (str): Имя сотрудника
+            base_salary (float): Базовая зарплата
+            bonus (float): Бонус к зарплате
+        """
+        # Вызываем конструктор родительского класса для инициализации name и base_salary
+        super().__init__(name, base_salary)
+        # Добавляем новый атрибут bonus
+        self.bonus = bonus
 
     def calculate_salary(self):
-        # ТВОЙ КОД ЗДЕСЬ
-        pass
+        """
+        Переопределенный метод расчета зарплаты.
+        Возвращает базовую зарплату + бонус.
+        """
+        return self.base_salary + self.bonus

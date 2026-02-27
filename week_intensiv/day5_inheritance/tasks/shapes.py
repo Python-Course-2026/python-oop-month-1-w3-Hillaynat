@@ -1,26 +1,56 @@
 import math
 
+
 class Shape:
     def get_area(self):
         return 0
 
+
 class Circle(Shape):
     """
-    ЗАДАЧА: Переопределить get_area для круга.
-    1. Конструктор принимает radius.
-    2. get_area возвращает площадь: pi * r^2.
-    3. Используйте math.pi.
+    Класс круга.
+    Переопределяет get_area для расчета площади круга.
     """
+
     def __init__(self, radius):
-        pass
+        """
+        Конструктор класса Circle.
+
+        Args:
+            radius (float): Радиус круга
+        """
+        self.radius = radius
 
     def get_area(self):
-        pass
+        """
+        Возвращает площадь круга: π * r²
+
+        Returns:
+            float: Площадь круга
+        """
+        return math.pi * self.radius ** 2
+
 
 class Square(Shape):
-    """ЗАДАЧА: Реализовать площадь квадрата (сторона * сторона)"""
+    """
+    Класс квадрата.
+    Переопределяет get_area для расчета площади квадрата.
+    """
+
     def __init__(self, side):
-        pass
+        """
+        Конструктор класса Square.
+
+        Args:
+            side (float): Длина стороны квадрата
+        """
+        self.side = side
 
     def get_area(self):
-        pass
+        """
+        Возвращает площадь квадрата: сторона * сторона
+
+        Returns:
+            float: Площадь квадрата
+        """
+        return self.side * self.side
